@@ -1,5 +1,8 @@
 package com.bl.day27;
 
+import java.io.File;
+import java.io.IOException;
+
 public class EmployeePayroll {
 
 	private int id;
@@ -10,12 +13,19 @@ public class EmployeePayroll {
 		
 	}
 
-	public EmployeePayroll(int id, String name, double salary) {
+	public EmployeePayroll(int id, String name, double salary) throws IOException {
 		this.id = id;
 		this.name = name;
 		this.salary = salary;
+//		File file = new File("E:\\RFP_java\\EmployeePayrollService\\EmployeePayrollService\\src\\main\\java\\com\\bl\\day27\\employee.txt");
+//		if(!file.exists()) {
+//			file.createNewFile();
+//		}
+//		else {
+//			System.out.println("file already created");
+//		}
 	}
-
+	
 	public int getId() {
 		return id;
 	}
