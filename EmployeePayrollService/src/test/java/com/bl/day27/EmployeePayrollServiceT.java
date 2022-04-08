@@ -7,6 +7,9 @@ import java.util.Arrays;
 import org.junit.Test;
 
 import com.bl.day27.EmployeePayrollService.IOService;
+
+import junit.framework.Assert;
+
 public class EmployeePayrollServiceT {
 
 	@Test
@@ -20,6 +23,10 @@ public class EmployeePayrollServiceT {
 		EmployeePayrollService employeePayrollService;
 		employeePayrollService = new EmployeePayrollService(Arrays.asList(arrayOfEmployees));
 		employeePayrollService.writeEmployeeData(IOService.FILE_IO);
+		
+		employeePayrollService.printData(IOService.FILE_IO);
+		long entries = employeePayrollService.countEntries(IOService.FILE_IO);
+		Assert.assertEquals(3, entries);
 
 	}
 }

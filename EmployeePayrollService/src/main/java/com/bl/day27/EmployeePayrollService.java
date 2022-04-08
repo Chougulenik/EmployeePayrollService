@@ -28,6 +28,17 @@ public class EmployeePayrollService {
 		employeePayrollService.readEmployeeData(consoleInputReader);
 		employeePayrollService.writeEmployeeData(IOService.CONSOLE_IO);
 	}
+	
+	public void printData(IOService fileIo) {
+		if(fileIo.equals(IOService.FILE_IO)) new EmployeePayrollFileIOService().printData();
+	}
+
+
+	public long countEntries(IOService fileIo) {
+		if(fileIo.equals(IOService.FILE_IO)) return new EmployeePayrollFileIOService().countEntries();
+		
+		return 0;
+	}
 
 	void writeEmployeeData(IOService ioService) {
 		if (ioService.equals(IOService.CONSOLE_IO))
